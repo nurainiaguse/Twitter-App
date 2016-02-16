@@ -44,22 +44,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        TwitterClient.sharedInstance.fetchAccessTokenWithPath("oauth/access_token", method: "POST", requestToken: BDBOAuth1Credential (queryString:url.query),
-                success: {(accessToken: BDBOAuth1Credential!) -> Void in
-                        TwitterClient.sharedInstance.requestSerializer.saveAccessToken(accessToken)
-                    
-                    TwitterClient.sharedInstance.GET("hello", parameters: nil, success: {
-                        (operation: NSURLSessionDataTask!, response: AnyObject!) -> Void in
-                    
-                        }, failure: {
-                            (operation: NSURLSessionDataTask!, error: NSError!) -> Void in
-                        }
-                    
-                    )
-            } {(error: NSError!) -> Void in
-                
-        })
-        return true
+        
+        TwitterClient.openURL(url: url)
+        
+                return true
     }
 
 
