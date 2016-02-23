@@ -17,6 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        if User.currentUser != nil{
+            print("there is a curr user")
+            
+        } else {
+            print("there aint no curr user")
+            
+        }
         // Override point for customization after application launch.
         return true
     }
@@ -45,8 +53,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         
-        TwitterClient.openURL(url: url)
+        //let client = TwitterClient.sharedInstance
+        TwitterClient.sharedInstance.handleOpenUrl(url)
         
+    /*    client.homeTimeline({(tweets: [Tweet]) -> () in
+            
+            }, failure: {( error: NSError) -> () in
+                
+            })
+        client.currentAccount({(user: User) -> () in
+            
+            }, failure: {( error: NSError) -> () in
+                
+        })
+
+        */
                 return true
     }
 
