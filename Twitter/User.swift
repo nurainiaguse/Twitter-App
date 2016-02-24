@@ -8,20 +8,25 @@
 
 import UIKit
 
-var _currentUser: User?
-
 class User: NSObject {
-    var name: String?
-    var screenname: String?
-    var profileImageUrl: String?
-    var tagline: String?
-    var dictionary: NSDictionary
+    var name: NSString?
+    var screenname: NSString?
+    var profileImageUrl: NSURL?
+    var tagline: NSString?
+    var dictionary: NSDictionary?
+    
+    static let userDidLogoutNotification = "UserDidLogout"
     
     init(dictionary: NSDictionary){
         self.dictionary = dictionary
         name = dictionary["name"] as? String
         screenname = dictionary["screen_name"] as? String
-        profileImageUrl = dictionary["profile_image_url"] as? String
+        let profileUrlString = dictionary["profile_image_url_https"] as? String
+        if let profileUrlString = profileUrlString{
+            profileImageUrl = NSURL(string: profileUrlString)
+            
+        }
+        //profileImageUrl = dictionary["profile_image_url"] as? NSURL
         tagline = dictionary["description"] as? String
         
     }
@@ -30,33 +35,32 @@ class User: NSObject {
     
     class var currentUser: User?{ // user may or may not exist
         get{
-            if _currentUser == nil {
-                let defaults = NSUserDefaults.standardUserDefaults()
-        
-                let userData = defaults.objectForKey("currentUser") as? NSData
-        
-                if let userData = userData {
-                    let dictionary = try! NSJSONSerialization.dataWithJSONObject(userData, options: []) as! NSDictionary
-                    _currentUser = User(dictionary: dictionary)
-                }
-        
+            //if _currentUser == nil {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            let userData = defaults.objectForKey("currentUserData") as? NSData
+            if let userData = userData{
+            let dictionary = try! NSJSONSerialization.JSONObjectWithData(userData, options: []) as! NSDictionary
+                _currentUser = User(dictionary: dictionary)
             }
             return _currentUser
+        
+        //    }
+         //   return _currentUser
         }
         set(user){ //saves the user
             _currentUser = user
             let defaults = NSUserDefaults.standardUserDefaults()
             
             if let user = user{
-                let data = try! NSJSONSerialization.dataWithJSONObject(user.dictionary, options: [])
-                defaults.setObject(data, forKey: "currentUser")
+                let data = try! NSJSONSerialization.dataWithJSONObject(user.dictionary!, options: [])
+                defaults.setObject(data, forKey: "currentUserData")
             } else {
-                defaults.setObject(nil, forKey: "currentUser")
+                defaults.setObject(nil, forKey: "currentUserData")
                 
             }
-            user?.dictionary
+           // user?.dictionary
             
-            defaults.setObject(user, forKey: "currentUser")
+           // defaults.setObject(user, forKey: "currentUserData")
             
             defaults.synchronize()
         }

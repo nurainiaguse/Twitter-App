@@ -16,6 +16,7 @@
 		539E35BE1C6FFAAC002A06A9 /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539E35BD1C6FFAAC002A06A9 /* TwitterClient.swift */; };
 		53A35C351C72B37A00F4C15A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A35C341C72B37A00F4C15A /* User.swift */; };
 		53A35C371C72B3A800F4C15A /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A35C361C72B3A800F4C15A /* Tweet.swift */; };
+		53D374341C7D326500BBC25C /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D374331C7D326500BBC25C /* TimelineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		539E35BD1C6FFAAC002A06A9 /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
 		53A35C341C72B37A00F4C15A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		53A35C361C72B3A800F4C15A /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		53D374331C7D326500BBC25C /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		55129DFFC687F913CDD8E4F2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 				539E35B41C6FF51A002A06A9 /* LaunchScreen.storyboard */,
 				539E35B71C6FF51A002A06A9 /* Info.plist */,
 				539E35BD1C6FFAAC002A06A9 /* TwitterClient.swift */,
+				53D374331C7D326500BBC25C /* TimelineViewController.swift */,
 			);
 			path = Twitter;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				539E35AE1C6FF519002A06A9 /* ViewController.swift in Sources */,
 				539E35BE1C6FFAAC002A06A9 /* TwitterClient.swift in Sources */,
 				539E35AC1C6FF519002A06A9 /* AppDelegate.swift in Sources */,
+				53D374341C7D326500BBC25C /* TimelineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

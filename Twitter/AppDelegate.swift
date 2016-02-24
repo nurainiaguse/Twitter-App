@@ -17,14 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
         if User.currentUser != nil{
-            print("there is a curr user")
-            
-        } else {
-            print("there aint no curr user")
-            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewControllerWithIdentifier("TimelineNavigationController")
+            window?.rootViewController = vc
         }
+        NSNotificationCenter.defaultCenter().addObserverForName(User.userDidLogoutNotification, object: nil, queue: NSOperationQueue.mainQueue()){(NSNotification) -> Void in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateInitialViewController()
+            
+            self.window?.rootViewController = vc
+        }
+
         // Override point for customization after application launch.
         return true
     }
@@ -54,9 +58,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         
         //let client = TwitterClient.sharedInstance
+        //client.handleOpenUrl(url)
         TwitterClient.sharedInstance.handleOpenUrl(url)
-        
-    /*    client.homeTimeline({(tweets: [Tweet]) -> () in
+  /*
+        client.homeTimeline({(tweets: [Tweet]) -> () in
             
             }, failure: {( error: NSError) -> () in
                 
@@ -66,8 +71,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }, failure: {( error: NSError) -> () in
                 
         })
-
-        */
+*/
+        
                 return true
     }
 
