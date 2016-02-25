@@ -19,7 +19,6 @@ The following **required** functionality is completed:
 
 Here's a walkthrough of implemented user stories:
 
-Coming soon
 
 <img src='http://i.imgur.com/rPR5M3e.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
