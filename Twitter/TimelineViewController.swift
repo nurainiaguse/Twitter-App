@@ -8,23 +8,31 @@
 
 import UIKit
 
-class TimelineViewController: UIViewController {
-    var tweets: [Tweet]!
+class TimelineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    var tweets = [Tweet]()
+    
+    
+    @IBOutlet weak var timelineTableView: UITableView!
     
     @IBAction func onLogout(sender: AnyObject) {
         TwitterClient.sharedInstance.logout()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         TwitterClient.sharedInstance.homeTimeline({ (tweets: [Tweet]) -> () in
             self.tweets = tweets
-            for tweet in tweets{
-                print(tweet.text)
-                
-            }
+            print("in view did load")
+            print(tweets.count)
+            print(self.tweets.count)
+            self.timelineTableView.reloadData()
             }, failure: { (error: NSError) -> () in
                 
         })
+        timelineTableView.dataSource = self
+        timelineTableView.delegate = self
+        print("before reaload data")
+        //timelineTableView.reloadData()
         // Do any additional setup after loading the view.
     }
 
@@ -33,6 +41,34 @@ class TimelineViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        print("the tweet count is")
+        print(tweets.count)
+        return tweets.count
+       /* if let tweets = tweets { //if movies is not nil, assign it to movies
+            print("the tweet count is")
+            print(tweets.count)
+            return tweets.count
+            
+        }
+        else {
+            print("count is 0")
+            return 0
+        }
+*/
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        let tweet = tweets[indexPath.row]
+    let cell = timelineTableView.dequeueReusableCellWithIdentifier("tweetcell", forIndexPath: indexPath) as! TweetCell
+        print("printing out the cells")
+        print(tweet.text)
+    cell.username.text = tweet.userName
+        cell.tweetlabel.text = tweet.text as? String
+        cell.profileImageView.setImageWithURL(tweet.profileImageURL!)
+        return cell
+    
+    }
 
     /*
     // MARK: - Navigation

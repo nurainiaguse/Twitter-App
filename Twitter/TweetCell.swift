@@ -9,7 +9,14 @@
 import UIKit
 
 class TweetCell: UITableViewCell {
+    @IBOutlet weak var username: UILabel!
+    
+    @IBOutlet weak var tweetlabel: UILabel!
+    
+    @IBOutlet weak var profileImageView: UIImageView!
 
+    @IBOutlet weak var timestampLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
