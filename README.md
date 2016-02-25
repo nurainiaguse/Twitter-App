@@ -10,6 +10,9 @@ The following **required** functionality is completed:
 
 -  User can sign in using OAuth login flow
 -  The current signed in user will be persisted across restarts
+-  The current signed in user will be persisted across restarts
+-  In the home timeline, user can view tweet with the user profile picture, username, tweet text, and timestamp.
+-  Retweeting and favoriting should increment the retweet and favorite count.
 
 
 ## Video Walkthrough 
@@ -18,7 +21,7 @@ Here's a walkthrough of implemented user stories:
 
 Coming soon
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/rPR5M3e.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
