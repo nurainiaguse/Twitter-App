@@ -65,7 +65,14 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         print(tweet.text)
     cell.username.text = tweet.userName
         cell.tweetlabel.text = tweet.text as? String
+        cell.favouritect = tweet.favCount
+        cell.retweetct = tweet.retweetCount
         cell.profileImageView.setImageWithURL(tweet.profileImageURL!)
+        cell.retweetLabel.text = "\(cell.retweetct)"
+        cell.favLabel.text = "\(cell.favouritect)"
+        cell.timestampLabel.text = tweet.createdAtString
+
+        
         return cell
     
     }

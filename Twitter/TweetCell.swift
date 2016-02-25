@@ -17,6 +17,15 @@ class TweetCell: UITableViewCell {
 
     @IBOutlet weak var timestampLabel: UILabel!
     
+    @IBOutlet weak var retweetLabel: UILabel!
+    
+    @IBOutlet weak var favLabel: UILabel!
+    
+    var retweeted : BooleanType = false
+    var favourited : BooleanType = false
+    var retweetct : Int!
+    var favouritect : Int!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,6 +35,33 @@ class TweetCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func pressRT(sender: AnyObject) {
+        if (retweeted){
+            retweeted = false
+            retweetct = retweetct - 1
+           retweetLabel.text = "\(retweetct)"
+        }
+        else{
+            retweeted = true
+            retweetct = retweetct + 1
+            retweetLabel.text = "\(retweetct)"
+        }
+        
+    }
+    
+    @IBAction func pressFav(sender: AnyObject) {
+        if (favourited){
+            favourited = false
+            favouritect = favouritect - 1
+            favLabel.text = "\(favouritect)"
+        }
+        else{
+            favourited = true
+            favouritect = favouritect + 1
+            favLabel.text = "\(favouritect)"
+        }
     }
 
 }
