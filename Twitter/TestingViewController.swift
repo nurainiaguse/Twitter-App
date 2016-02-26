@@ -23,8 +23,17 @@ class TestingViewController: UIViewController {
     @IBOutlet weak var tweetTextLabel: UILabel!
     
     @IBOutlet weak var favctLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        usernameLabel.text = tweety.userName
+        tweetTextLabel.text = tweety.text as? String
+        dpView.setImageWithURL(tweety.profileImageURL!)
+        tweetctlabel.text = "\(tweety.retweetCount)"
+        favctLabel.text = "\(tweety.favCount)"
+        //timestampLabel.text = tweet.createdAtString
 
         // Do any additional setup after loading the view.
     }
