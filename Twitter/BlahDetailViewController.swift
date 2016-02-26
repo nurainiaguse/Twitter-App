@@ -11,7 +11,7 @@ import UIKit
 
 class TweetDetailViewController: UIViewController {
     
-    var tweet: Tweet!
+    var tweety: Tweet!
     
     @IBOutlet weak var usernameLabel: UILabel!
     
@@ -24,6 +24,8 @@ class TweetDetailViewController: UIViewController {
     @IBOutlet weak var tweetctLabel: UILabel!
 
     @IBOutlet weak var favctLabel: UILabel!
+    
+    var testing: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -106,7 +106,7 @@
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="2o9-i3-8ZU">
-                                                    <rect key="frame" x="2" y="26" width="48" height="62"/>
+                                                    <rect key="frame" x="2" y="26" width="48" height="48"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -118,7 +118,7 @@
                                             <outlet property="timestampLabel" destination="FrM-w3-qUi" id="zQv-xC-9R7"/>
                                             <outlet property="tweetlabel" destination="Nbv-Eo-rKx" id="uRh-jp-wyz"/>
                                             <outlet property="username" destination="PkP-BK-SKc" id="3sf-f5-Y9v"/>
-                                            <segue destination="dJp-ah-LTg" kind="push" id="T6y-id-z90"/>
+                                            <segue destination="dJp-ah-LTg" kind="push" identifier="toTweetDetails" id="T6y-id-z90"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -141,10 +141,10 @@
             </objects>
             <point key="canvasLocation" x="1286" y="313"/>
         </scene>
-        <!--Tweet Detail View Controller-->
+        <!--Testing View Controller-->
         <scene sceneID="bTg-q4-1li">
             <objects>
-                <viewController id="dJp-ah-LTg" customClass="TweetDetailViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dJp-ah-LTg" customClass="TestingViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vzU-GU-DYg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -214,12 +214,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="5wf-Le-MZe"/>
                     <connections>
-                        <outlet property="dpView" destination="iYh-gY-kea" id="0zd-VJ-SRB"/>
-                        <outlet property="favctLabel" destination="Uep-ow-BSA" id="52o-W7-b24"/>
-                        <outlet property="tweetctLabel" destination="iO2-FM-AWb" id="EYV-kS-dc6"/>
-                        <outlet property="tweethandleLabel" destination="l66-7D-1GT" id="mW0-63-VLd"/>
-                        <outlet property="tweettextLabel" destination="RU4-56-8hU" id="rRL-Wy-e2w"/>
-                        <outlet property="usernameLabel" destination="d6L-Pf-Hvz" id="37G-QM-kmn"/>
+                        <outlet property="dpView" destination="iYh-gY-kea" id="ZYQ-WD-h5D"/>
+                        <outlet property="favctLabel" destination="Uep-ow-BSA" id="qtC-kc-WfY"/>
+                        <outlet property="tweetTextLabel" destination="RU4-56-8hU" id="J0p-EM-tpS"/>
+                        <outlet property="tweetctlabel" destination="iO2-FM-AWb" id="hRc-wC-kJN"/>
+                        <outlet property="tweethandleLabel" destination="l66-7D-1GT" id="5NC-KE-moV"/>
+                        <outlet property="usernameLabel" destination="d6L-Pf-Hvz" id="EU3-oI-WHH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BeC-87-W4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
