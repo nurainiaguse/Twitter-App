@@ -8,8 +8,23 @@
 
 import UIKit
 
-class TweetDetailViewController: UIViewController {
 
+class TweetDetailViewController: UIViewController {
+    
+    var tweet: Tweet!
+    
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+    @IBOutlet weak var tweethandleLabel: UILabel!
+    
+    @IBOutlet weak var dpView: UIImageView!
+    
+    @IBOutlet weak var tweettextLabel: UILabel!
+    
+    @IBOutlet weak var tweetctLabel: UILabel!
+
+    @IBOutlet weak var favctLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
