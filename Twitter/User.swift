@@ -25,6 +25,8 @@ class User: NSObject {
         if let profileUrlString = profileUrlString{
             profileImageUrl = NSURL(string: profileUrlString)
             
+        }else {
+            profileImageUrl = nil
         }
         //profileImageUrl = dictionary["profile_image_url"] as? NSURL
         tagline = dictionary["description"] as? String

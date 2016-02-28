@@ -103,10 +103,10 @@ class TwitterClient: BDBOAuth1SessionManager {
         
         
     }
-    func currentAccount(success: (User) -> (), failure: NSError?-> ()){
+    func currentAccount(success: (User) -> (), failure: (NSError)-> ()){
         GET("1.1/account/verify_credentials.json", parameters: nil, progress: nil, success: {
             (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
-            //print("user: \(response)")
+            print("in current account in twitter client user: \(response)")
             let userDict = response as! NSDictionary
             let user = User(dictionary: userDict)
             success(user)

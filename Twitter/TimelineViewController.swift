@@ -82,7 +82,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        if segue.identifier == "toTweetDetails"{
         let cell = sender as! UITableViewCell
         let indexPath = timelineTableView.indexPathForCell(cell)
         let tweet = tweets[indexPath!.row]
@@ -90,6 +90,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         let TweetDetailViewController = segue.destinationViewController as! TestingViewController
     
         TweetDetailViewController.tweety = tweet
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }

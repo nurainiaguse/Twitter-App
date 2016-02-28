@@ -1,5 +1,5 @@
 //
-//  HomepageViewController.swift
+//  ComposeViewController.swift
 //  Twitter
 //
 //  Created by Nuraini Aguse on 2/27/16.
@@ -8,30 +8,10 @@
 
 import UIKit
 
-class HomepageViewController: UIViewController {
-    
-    
-    @IBOutlet weak var tweetLabel: UILabel!
-    
-    @IBOutlet weak var mydpImage: UIImageView!
-    
-   // var me: User!
+class ComposeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var me1: User!
-        print("in acct view")
-        
-        TwitterClient.sharedInstance.currentAccount({ (me: User) -> () in
-            me1 = me
-            print("success found user")
-            }, failure: { (error: NSError) -> () in
-                print("no find user")
-        })
-        print("b4 set image")
-        
-        tweetLabel.text = me1.name as? String
-        //mydpImage.setImageWithURL(me.profileImageUrl!)
 
         // Do any additional setup after loading the view.
     }
