@@ -76,6 +76,20 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     
     }
+    
+    @IBAction func canceltweet(segue:UIStoryboardSegue){
+        
+        
+    }
+    
+    @IBAction func sendtweet(segue:UIStoryboardSegue){
+        if let composeViewController = segue.sourceViewController as? ComposeViewController{
+            
+            if let newtweet = composeViewController.tweetField.text{ // fire the api request to update status
+                TwitterClient.sharedInstance.sendTweet(newtweet)
+            }
+        }
+    }
 
     
     // MARK: - Navigation

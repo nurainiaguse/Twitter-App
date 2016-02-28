@@ -120,6 +120,14 @@ class TwitterClient: BDBOAuth1SessionManager {
         
     }
     
+    func sendTweet(newTweet: String){
+        POST("https://api.twitter.com/1.1/statuses/update.json?status=\(newTweet)", parameters: nil, progress: nil, success: {(operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            
+            }) {(operation: NSURLSessionDataTask?, error: NSError) -> Void in
+                
+            }
+    }
+    
     
     func loginWithCompletion(success: () -> (), failure: (NSError?)-> ()){
         deauthorize()

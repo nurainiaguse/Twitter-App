@@ -10,6 +10,13 @@ import UIKit
 
 class ComposeViewController: UIViewController {
 
+    @IBOutlet weak var tweetField: UITextField!
+    
+    
+    @IBAction func isTyping(sender: AnyObject) {
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
