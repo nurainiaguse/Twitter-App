@@ -43,6 +43,23 @@ class TestingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func backtodetails(segue:UIStoryboardSegue){
+        
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //if segue.identifier == "toTweetDetails"{
+            let nav = segue.destinationViewController as! UINavigationController
+            
+            let profileViewController = nav.topViewController as! ProfileViewController
+            
+            profileViewController.user = tweety.user
+       // }
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    
 
     /*
     // MARK: - Navigation
