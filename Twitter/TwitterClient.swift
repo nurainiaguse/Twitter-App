@@ -127,6 +127,31 @@ class TwitterClient: BDBOAuth1SessionManager {
                 
             }
     }
+/*
+    func sendreply(newreply: String){
+        POST("https://api.twitter.com/1.1/statuses/update.json?status=\(newTweet)", parameters: nil, progress: nil, success: {(operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            
+            }) {(operation: NSURLSessionDataTask?, error: NSError) -> Void in
+                
+        }
+    }
+*/
+    
+    func retweet(tweetID: String){
+        POST("https://api.twitter.com/1.1/statuses/retweet/\(tweetID).json", parameters: nil, progress: nil, success: {(operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            
+            }) {(operation: NSURLSessionDataTask?, error: NSError) -> Void in
+                
+            }
+    }
+    
+    func favourite(tweetID: String){
+        POST("https://api.twitter.com/1.1/favorites/create.json?id=\(tweetID)", parameters: nil, progress: nil, success: {(operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            
+            }) {(operation: NSURLSessionDataTask?, error: NSError) -> Void in
+                
+        }
+    }
     
     
     func loginWithCompletion(success: () -> (), failure: (NSError?)-> ()){

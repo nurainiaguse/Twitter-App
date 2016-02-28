@@ -48,6 +48,37 @@ class TestingViewController: UIViewController {
         
     }
     
+    @IBAction func cancelreply(segue:UIStoryboardSegue){
+        
+        
+    }
+    
+    @IBAction func sendreply(segue:UIStoryboardSegue){
+    /*    if let replyViewController = segue.sourceViewController as? ReplyTweetViewController{
+            
+            if let reply = replyViewController.replyField.text{ // fire the api request to update status
+                TwitterClient.sharedInstance.sendreply(reply)
+            }
+        }
+*/
+    }
+    
+    @IBAction func onretweet(sender: AnyObject) {
+        print("retweet clicked")
+        self.tweety.retweetCount++
+        tweetctlabel.text = "\(tweety.retweetCount)"
+        TwitterClient.sharedInstance.retweet(tweety.tweetID as! String)
+    }
+
+    @IBAction func onfavourite(sender: AnyObject) {
+        self.tweety.favCount++
+        favctLabel.text = "\(tweety.favCount)"
+        TwitterClient.sharedInstance.favourite(tweety.tweetID as! String)
+        
+    }
+    
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toUserProfile"{
             let nav = segue.destinationViewController as! UINavigationController

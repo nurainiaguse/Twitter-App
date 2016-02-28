@@ -363,12 +363,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <state key="normal" title="Retweet"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="L66-vE-60k">
-                                <rect key="frame" x="238" y="257" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <state key="normal" title="Favourite"/>
+                                <connections>
+                                    <action selector="onretweet:" destination="dJp-ah-LTg" eventType="touchUpInside" id="drq-W2-jei"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zgn-fT-it8">
                                 <rect key="frame" x="124" y="257" width="46" height="30"/>
@@ -377,6 +374,15 @@
                                 <state key="normal" title="Reply"/>
                                 <connections>
                                     <segue destination="GvU-CE-Sm2" kind="modal" identifier="toReply" id="Dbk-hD-9Jy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="L66-vE-60k">
+                                <rect key="frame" x="238" y="257" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title="Favourite"/>
+                                <connections>
+                                    <action selector="onfavourite:" destination="dJp-ah-LTg" eventType="touchUpInside" id="b61-D2-LUc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -402,20 +408,40 @@
             </objects>
             <point key="canvasLocation" x="2098" y="-215"/>
         </scene>
-        <!--View Controller-->
+        <!--Reply Tweet View Controller-->
         <scene sceneID="tKC-Vd-K62">
             <objects>
-                <viewController id="IZb-tn-nfB" sceneMemberID="viewController">
+                <viewController id="IZb-tn-nfB" customClass="ReplyTweetViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NeO-vv-Bbm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" id="GyO-yy-Ko3">
+                                <rect key="frame" x="20" y="118" width="280" height="152"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1yW-tU-5yk"/>
+                    <navigationItem key="navigationItem" id="1yW-tU-5yk">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="bds-NP-PcQ">
+                            <connections>
+                                <segue destination="Al0-PI-fki" kind="unwind" unwindAction="cancelreply:" id="otV-0a-wRO"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="Pz2-X9-p5Z">
+                            <connections>
+                                <segue destination="Al0-PI-fki" kind="unwind" unwindAction="sendreply:" id="i4T-yB-I4f"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZAg-qx-yZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Al0-PI-fki" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3064" y="-517"/>
+            <point key="canvasLocation" x="3014" y="-817"/>
         </scene>
         <!--Item-->
         <scene sceneID="IVj-LS-6hP">
@@ -567,7 +593,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWf-23-v9K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2532" y="-517"/>
+            <point key="canvasLocation" x="2680" y="-787"/>
         </scene>
     </scenes>
 </document>

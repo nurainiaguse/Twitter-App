@@ -17,6 +17,7 @@ class Tweet: NSObject {
     var favCount: Int = 0
     var userName: String?
     var profileImageURL: NSURL?
+    var tweetID:NSString?
     
     init(dictionary: NSDictionary){
         //user = User(dictionary: dictionary["user"] as! NSDictionary)
@@ -26,6 +27,7 @@ class Tweet: NSObject {
         favCount = (dictionary["favourites_count"] as? Int) ?? 0
         user = dictionary["user"] as? NSDictionary
         userName = user["name"] as? String
+        tweetID = dictionary["id_str"] as? String
         if let createdAtString = createdAtString{
             let formatter = NSDateFormatter()
             formatter.dateFormat = "EEE MMM d HH:mm:ss Z y"
