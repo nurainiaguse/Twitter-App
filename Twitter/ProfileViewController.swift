@@ -15,6 +15,11 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var userdpImage: UIImageView!
     
+    @IBOutlet weak var tweetct: UILabel!
+    
+    @IBOutlet weak var followersct: UILabel!
+    
+    @IBOutlet weak var followingct: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +32,10 @@ class ProfileViewController: UIViewController {
             profileImageURL = nil
         }
         userdpImage.setImageWithURL(profileImageURL!)
+        
+        tweetct.text = "\(user["statuses_count"]!)"
+        followingct.text = "\(user["friends_count"]!)"
+        followersct.text = "\(user["followers_count"]!)"
 
         // Do any additional setup after loading the view.
     }

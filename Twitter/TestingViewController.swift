@@ -49,13 +49,13 @@ class TestingViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //if segue.identifier == "toTweetDetails"{
+        if segue.identifier == "toUserProfile"{
             let nav = segue.destinationViewController as! UINavigationController
             
             let profileViewController = nav.topViewController as! ProfileViewController
             
             profileViewController.user = tweety.user
-       // }
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
