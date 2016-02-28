@@ -10,6 +10,7 @@
 		44DCFCBCDC17EE108B700BD5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AAEEFF92CF8A529675A0FF9 /* Pods.framework */; };
 		530647A31C7FE12300477434 /* BlahDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530647A21C7FE12200477434 /* BlahDetailViewController.swift */; };
 		530647A51C7FFE6E00477434 /* TestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530647A41C7FFE6E00477434 /* TestingViewController.swift */; };
+		530647A91C8283EE00477434 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530647A81C8283ED00477434 /* HomepageViewController.swift */; };
 		539E35AC1C6FF519002A06A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539E35AB1C6FF519002A06A9 /* AppDelegate.swift */; };
 		539E35AE1C6FF519002A06A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539E35AD1C6FF519002A06A9 /* ViewController.swift */; };
 		539E35B11C6FF51A002A06A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 539E35AF1C6FF51A002A06A9 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		29598FC67D5900DB78573E94 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		530647A21C7FE12200477434 /* BlahDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlahDetailViewController.swift; sourceTree = "<group>"; };
 		530647A41C7FFE6E00477434 /* TestingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingViewController.swift; sourceTree = "<group>"; };
+		530647A81C8283ED00477434 /* HomepageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		539E35A81C6FF519002A06A9 /* Twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		539E35AB1C6FF519002A06A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		539E35AD1C6FF519002A06A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				539E35AD1C6FF519002A06A9 /* ViewController.swift */,
 				530647A21C7FE12200477434 /* BlahDetailViewController.swift */,
 				530647A41C7FFE6E00477434 /* TestingViewController.swift */,
+				530647A81C8283ED00477434 /* HomepageViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				53D374361C7D650200BBC25C /* TweetCell.swift in Sources */,
 				53A35C371C72B3A800F4C15A /* Tweet.swift in Sources */,
 				530647A51C7FFE6E00477434 /* TestingViewController.swift in Sources */,
+				530647A91C8283EE00477434 /* HomepageViewController.swift in Sources */,
 				539E35AE1C6FF519002A06A9 /* ViewController.swift in Sources */,
 				539E35BE1C6FFAAC002A06A9 /* TwitterClient.swift in Sources */,
 				530647A31C7FE12300477434 /* BlahDetailViewController.swift in Sources */,

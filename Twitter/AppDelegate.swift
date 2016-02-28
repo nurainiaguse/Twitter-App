@@ -17,10 +17,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        //window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
         if User.currentUser != nil{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewControllerWithIdentifier("TimelineNavigationController")
+            let vc = storyboard.instantiateViewControllerWithIdentifier("tabBarNavController")
             window?.rootViewController = vc
+
+           /* let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let timelineNavController = storyboard.instantiateViewControllerWithIdentifier("TimelineNavigationController") as! UINavigationController
+            
+            let timelineViewController = timelineNavController.topViewController as! TimelineViewController
+            
+            let homepageNavController = storyboard.instantiateViewControllerWithIdentifier("TimelineNavigationController") as! UINavigationController
+            
+            let homepageViewController = homepageNavController.topViewController as! HomepageViewController
+            
+            let tabBar = UITabBarController()
+            tabBar.viewControllers = [timelineNavController, homepageNavController]
+            window?.rootViewController = tabBar
+            window?.makeKeyAndVisible()
+            */
+            
         }
         NSNotificationCenter.defaultCenter().addObserverForName(User.userDidLogoutNotification, object: nil, queue: NSOperationQueue.mainQueue()){(NSNotification) -> Void in
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
