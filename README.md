@@ -69,7 +69,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I took a while trying to figure out why the API for getting my account information did not work. I did not have enough time to implement my own profile page, although I have added a tab that would transition to that view. I keep getting a nil when requesting for my account and the app crashes.
 
 ## License
 
